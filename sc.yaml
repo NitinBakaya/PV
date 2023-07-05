@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: demo-storage
+provisioner: k8s.io/minikube-hostpath 
+volumeBindingMode: Immediate # pv is created immediately as when the pvc is created and waitFOrCosumer in which the pv is not ceated utill the pvc is used by one of the pod
+reclaimPolicy: Delete   #when the PVC is delete them the PV is also deleted
+
